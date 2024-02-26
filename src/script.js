@@ -1,25 +1,42 @@
-'use strict';
+const interval = setInterval(updateCountdown, 1000);
 
-/* let timeToWait=;
-let today=; */
+///////////////////////////////////////////////
+function updateCountdown() {
+  const countDownDate = getCountdownDate();
+  const parsedDate = Date.parse(countDownDate);
+  const now = new Date();
+  const difference = new Date(parsedDate) - now;
+  //new Date('YYYY-MM-DDTHH:MM:SS');
 
-let countDownDate = new Date('07.07.2024').getTime();
+  let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  let hours = Math.floor(
+    (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-let x = setInterval(function () {
-  let now = new Date().getTime();
-
-  let distance = countDownDate - now;
-
-  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((distance % (1000 * 60 * 60624)) / (1000 * 60 * 60));
-  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById('print').innerHTML =
-    days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's ';
-
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById('print').innerHTML = 'Expired';
+  if (difference < 0) {
+    clearInterval(interval);
+    document.getElementById('timer').innerText = 'The event has started';
   }
-}, 1000);
+  return changeInput([days, hours, minutes, seconds]);
+}
+////////////////////////////////////////////////////////
+function getCountdownDate() {
+  return document.getElementById(`InputCountdownDate`).value;
+}
+////////////////////////////////////////////////////////
+function changeInput([days, hours, minutes, seconds]) {
+  document.getElementById('days').innerText = days;
+  document.getElementById('hours').innerText = hours;
+  document.getElementById('minutes').innerText = minutes;
+  document.getElementById('seconds').innerText = seconds;
+}
+
+////////////////////////////////////////////////////////
+const form = document.querySelector('[data-js="form"]');
+
+form.addEventListener('submit', event => {
+  event.preventDefault();
+  updateCountdown();
+});
