@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +8,7 @@
 }
 body {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -36,8 +38,22 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.container form {
+/* .container form {
   padding: 30px 0 0 0;
+} */
+.input-data {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+}
+.input-data input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
 }
 .formRow {
   display: flex;
@@ -61,6 +77,7 @@ body {
   align-items: center;
   gap: 1rem;
   font-size: 3rem;
+  width: 100%;
 }
 
 .timeUnit {
@@ -69,11 +86,53 @@ body {
   letter-spacing: 2px;
   margin-top: 10px;
 }
+.developedBy {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  margin: 0.5rem;
+}
+
 @media (max-width: 600px) {
+  .container {
+    width: 70%;
+    padding: 1rem;
+    /* margin: 1rem; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container h1 {
+    font-size: 28px;
+    padding: 1rem;
+    margin: 0.8rem 0 0.5rem;
+  }
+  .input-data {
+    font-size: 14px;
+  }
+  .formRow {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0.5rem 0;
+  }
+
   .timer {
-    font-size: 2rem;
+    font-size: 24px;
   }
   .timeUnit {
-    font-size: 1rem;
+    font-size: 12px;
+  }
+  .countdown {
+    width: 60%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0 3rem 0;
+  }
+  .countdown .timer {
+    flex-direction: column;
   }
 }
