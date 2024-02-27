@@ -11,7 +11,7 @@ Diese Webseite ermöglicht es Benutzern, einen Countdown für ein bestimmtes Dat
 ## Verwendung
 
 1. Öffnen Sie die `index.html`-Datei in einem Webbrowser.
-2. Geben Sie das gewünschte Datum im Eingabefeld ein und drücken Sie "Enter" oder klicken Sie auf "Senden".
+2. Geben Sie das gewünschte Datum im Eingabefeld ein und drücken Sie "Enter".
 3. Der Countdown wird gestartet und die verbleibende Zeit wird angezeigt.
 
 ## Technologien
