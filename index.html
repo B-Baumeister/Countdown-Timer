@@ -5,26 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./src/script.js" type="module"></script>
     <link href="styles/style.css" rel="stylesheet" />
-    <title>Countdown Timer</title>
+    <title>Countdown</title>
   </head>
   <body>
-    <div><h1>HI</h1></div>
-    <form data-js="form">
-      <label for="InputCountdownDate">CountdownDate</label>
-      <input type="date" id="InputCountdownDate" name="InputCountdownDate" />
-      <button type="submit">Send</button>
-    </form>
-    <div class="countdown">
-      <p id="timer">
-        <span id="days"></span>
-        <span class="timeUnit">Days</span>
-        <span id="hours"></span>
-        <span class="timeUnit">hours</span>
-        <span id="minutes"></span>
-        <span class="timeUnit">minutes</span>
-        <span id="seconds"></span>
-        <span class="timeUnit">seconds</span>
-      </p>
+    <div class="container">
+      <h1>HI</h1>
+      <form data-js="form">
+        <div class="formRow">
+          <label class="input-data" for="InputCountdownDate"
+            >Enter the Date:
+          </label>
+          <input
+            type="date"
+            id="InputCountdownDate"
+            name="InputCountdownDate"
+          />
+          <!--  <button class="button" type="submit">Send</button> -->
+        </div>
+      </form>
+
+      <div class="countdown">
+        <p class="timer" id="timer">
+          <span id="days"></span>
+          <span class="timeUnit">Days</span>
+          <span id="hours"></span>
+          <span class="timeUnit">hours</span>
+          <span id="minutes"></span>
+          <span class="timeUnit">minutes</span>
+          <span id="seconds"></span>
+          <span class="timeUnit">seconds</span>
+        </p>
+      </div>
     </div>
   </body>
 </html>
