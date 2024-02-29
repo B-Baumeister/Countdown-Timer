@@ -72,6 +72,13 @@ body {
   justify-content: center;
   margin: 32px 0;
 }
+
+.pastEvent {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
 .timer {
   display: flex;
   align-items: center;

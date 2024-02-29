@@ -1,4 +1,4 @@
-const interval = setInterval(updateCountdown, 1000);
+const intervalID = setInterval(updateCountdown, 1000);
 
 ///////////////////////////////////////////////
 function updateCountdown() {
@@ -19,8 +19,11 @@ function updateCountdown() {
   let seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
   if (difference < 0) {
-    clearInterval(interval);
-    document.getElementById('timer').innerText = 'The event has started';
+    document.getElementById('timer').style.display = 'none';
+    document.getElementById('pastEvent').style.display = 'flex';
+  } else {
+    document.getElementById('timer').style.display = 'flex';
+    document.getElementById('pastEvent').style.display = 'none';
   }
   return changeInput([days, hours, minutes, seconds]);
 }
