@@ -5,9 +5,12 @@ function updateCountdown() {
   const countDownDate = getCountdownDate();
   const parsedDate = Date.parse(countDownDate);
   const now = new Date();
-  const difference = new Date(parsedDate) - now;
-  //new Date('YYYY-MM-DDTHH:MM:SS');
 
+  let difference = new Date(parsedDate) - now;
+  //new Date('YYYY-MM-DDTHH:MM:SS');
+  if (isNaN(parsedDate)) {
+    difference = 0;
+  }
   let days = Math.floor(difference / (1000 * 60 * 60 * 24));
   let hours = Math.floor(
     (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)

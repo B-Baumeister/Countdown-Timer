@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./src/script.js" type="module"></script>
+    <script src="./src/script.js" type="module" defer></script>
     <link href="styles/style.css" rel="stylesheet" />
     <title>Countdown</title>
   </head>
@@ -27,13 +27,13 @@
 
       <div class="countdown">
         <p class="timer" id="timer">
-          <span id="days"></span>
+          <span id="days">0</span>
           <span class="timeUnit">Days</span>
-          <span id="hours"></span>
+          <span id="hours">0</span>
           <span class="timeUnit">hours</span>
-          <span id="minutes"></span>
+          <span id="minutes">0</span>
           <span class="timeUnit">minutes</span>
-          <span id="seconds"></span>
+          <span id="seconds">0</span>
           <span class="timeUnit">seconds</span>
         </p>
       </div>
